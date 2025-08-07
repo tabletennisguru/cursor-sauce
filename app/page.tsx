@@ -14,6 +14,11 @@ export default function Home() {
       description: 'An interactive button that creates a colorful confetti explosion',
       path: '/prototypes/confetti-button'
     },
+    {
+      title: 'Rams Piano',
+      description: 'A minimalist piano inspired by Dieter Rams design philosophy with recording capabilities',
+      path: '/prototypes/rams-piano'
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',

@@ -1,0 +1,435 @@
+/* Dieter Rams inspired piano styles */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%);
+  padding: 2rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.controlPanel {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.controlLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: #e0e0e0;
+  border-radius: 1px;
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #000;
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controlButton {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.controlButton:hover:not(:disabled) {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+.controlButton:active:not(:disabled) {
+  background: #eee;
+  transform: translateY(1px);
+}
+
+.controlButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.octaveDisplay {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #fff;
+  font-size: 0.875rem;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.recordButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.recordButton:hover:not(:disabled) {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+.recordButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.recordButton.recording {
+  background: #ff4444;
+  color: white;
+  border-color: #ff4444;
+}
+
+.recordButton.recording:hover {
+  background: #ee3333;
+  border-color: #ee3333;
+}
+
+.playButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #333;
+  background: #333;
+  color: white;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.playButton:hover:not(:disabled) {
+  background: #000;
+}
+
+.playButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tuneControls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tuneSelect {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #fff;
+  font-size: 0.875rem;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.tuneSelect:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.tuneSelect:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.playTuneButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #4a90e2;
+  background: #4a90e2;
+  color: white;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.playTuneButton:hover:not(:disabled) {
+  background: #357abd;
+  border-color: #357abd;
+}
+
+.playTuneButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tuneInfo {
+  font-size: 0.75rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.keyboard {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 200px;
+  background: #333;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.whiteKeys {
+  display: flex;
+  height: 100%;
+  gap: 2px;
+}
+
+.whiteKey {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.whiteKey:hover {
+  background: #f8f8f8;
+  transform: translateY(1px);
+}
+
+.whiteKey:active,
+.whiteKey.pressed {
+  background: #e8e8e8;
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.keyLabel {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.blackKeys {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  height: 60%;
+  pointer-events: none;
+}
+
+.blackKey {
+  position: absolute;
+  width: 3%;
+  height: 100%;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 0 0 2px 2px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+}
+
+.blackKey:hover {
+  background: #2a2a2a;
+  transform: translateX(-50%) translateY(1px);
+}
+
+.blackKey:active,
+.blackKey.pressed {
+  background: #0a0a0a;
+  transform: translateX(-50%) translateY(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .controlPanel {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .keyboard {
+    height: 150px;
+    max-width: 100%;
+  }
+  
+  .blackKey {
+    width: 4%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+    gap: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .keyboard {
+    height: 120px;
+  }
+  
+  .keyLabel {
+    font-size: 0.6rem;
+  }
+  
+  .blackKey {
+    width: 5%;
+  }
+}
+
+/* Focus states for accessibility */
+.whiteKey:focus,
+.blackKey:focus,
+.controlButton:focus,
+.select:focus,
+.recordButton:focus,
+.playButton:focus,
+.tuneSelect:focus,
+.playTuneButton:focus {
+  outline: 2px solid #666;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline on mouse interactions */
+.whiteKey:focus:not(:focus-visible),
+.blackKey:focus:not(:focus-visible),
+.controlButton:focus:not(:focus-visible),
+.select:focus:not(:focus-visible),
+.recordButton:focus:not(:focus-visible),
+.playButton:focus:not(:focus-visible),
+.tuneSelect:focus:not(:focus-visible),
+.playTuneButton:focus:not(:focus-visible) {
+  outline: none;
+}
