@@ -47,4 +47,46 @@ h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+/* Retro Radio Minimalist Design Variables */
+:root {
+  /* Retro Radio Color Palette */
+  --radio-cream: #f5f1eb;
+  --radio-beige: #e8ddd4;
+  --radio-warm-beige: #d4c4b0;
+  --radio-dark-beige: #c4b49d;
+  --radio-brown: #8b6f47;
+  --radio-dark-brown: #6b5537;
+  --radio-black: #2a2a2a;
+  --radio-white: #ffffff;
+  --radio-gray: #7a7a7a;
+  --radio-light-gray: #b8b8b8;
+  
+  /* Accent Colors */
+  --accent-orange: #d67e3b;
+  --accent-rust: #b85c3e;
+  --accent-sage: #9ca686;
+  --accent-navy: #4a5568;
+  
+  /* Typography */
+  --font-primary: "Inter", "Helvetica Neue", sans-serif;
+  --font-secondary: "SF Pro Display", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Monaco", monospace;
+  
+  /* Layout */
+  --border-radius: 12px;
+  --border-radius-small: 8px;
+  --border-radius-large: 20px;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Minimalist Body Styling */
+body {
+  background: linear-gradient(135deg, var(--radio-cream) 0%, var(--radio-beige) 100%);
+  font-family: var(--font-primary);
+  color: var(--radio-black);
+  line-height: 1.6;
 } 
